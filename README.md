@@ -20,6 +20,7 @@ The goals / steps of this project are the following:
 [image5]: ./media/track_center_driving.jpg "Center Driving Image"
 [image6]: ./media/steering_offset_example.png "Steering Offset"
 
+
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
 
@@ -37,9 +38,11 @@ My project includes the following files:
 
 #### 2. Submission includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
+
 ```sh
 python drive.py model.h5
 ```
+
 The model can be trained by executing the following.
 ```sh
 python model.py --train_folder data/train/ --validation_folder data/validation/ --epochs 2 --batch_size 256
@@ -89,6 +92,7 @@ Finding a combination of hyperparameters that yielded suitable results turned ou
 During training, I utilized only the left and right camera images.  For each image, a steering offset was applied to the actual steering value.  The thought here was that the left image would appear like the car had drifted to the left and required right steering input to move back to the center.  This effectively doubled the training set as well as amplified the steering commands to include larger corrections that would not normally be seen during data capture.  Originally I included the center image in the dataset but was unable to get consistent results.  I expect that including the center image narrows the acceptable range for the steering offset hyperparameter.
 
 Here is an example of the three camera images with the applied steering offset:
+
 ![Steering Offset Example][image6]
 
 To manage a large number of images the Keras fit_generator function was utilized along with the batch_generator function in data_processing.py.  This would randomly draw a sample batch from the cleaned dataset, preprocess and deliver to the fit_generator.
@@ -136,11 +140,13 @@ Data augmentation was used to improve generalization and was applied to the batc
 ###### Applying a random shadow
 data_processing.py (line 7)
 A random shadow was applied to the general road area of the image by overlaying a random black triangle with random opacity.
+
 ![Random Shadow][image3]
 
 ###### Applying a random crop
 data_processing.py (line 36)
 A random crop was applied to the image which cropped the original 320x160 image to 200x68.  The crop position was limited to +/- 20 pixels vertically but could span the whole horizontal range.  Since the horizontal offset of the crop simulates the car being slightly offset from the actual position the steering angle was adjusted based on a linear factor applied to the magnitude of the horizontal offset from center.
+
 ![Random Crop][image2]
 
 ###### Applying a random horizontal flip
@@ -149,6 +155,7 @@ A random flip was applied to the images with a corresponding flip to the sign of
 
 #### Normalization
 Images were normalized using a contrast normalization with cutoff followed by a histogram equalization then the range was rescaled to be +/- 1.
+
 ![Original vs. Normalized Comparison][image1]
 
 ### Simulation Results
