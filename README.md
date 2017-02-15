@@ -13,11 +13,11 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./media/normalized_example_image_example.png "Normalize"
+[image1]: ./media/normalized_image_example.png "Normalize"
 [image2]: ./media/random_crop_example.png "Random Crop"
 [image3]: ./media/random_shadow_example.png "Random Shadow"
-[image4]: ./media/recovery_example.png "Recovery Driving Image"
-[image5]: ./media/track_center_driving.png "Center Driving Image"
+[image4]: ./media/recovery_example.jpg "Recovery Driving Image"
+[image5]: ./media/track_center_driving.jpg "Center Driving Image"
 [image6]: ./media/steering_offset_example.png "Steering Offset"
 
 ## Rubric Points
@@ -156,4 +156,4 @@ Using the final network described above the model was trained for 2 epochs of 20
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=5eTM9RLTmO4
 " target="_blank"><img src="http://img.youtube.com/vi/5eTM9RLTmO4/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+alt="IMAGE ALT TEXT HERE" width="800" height="600" border="10" /></a>
