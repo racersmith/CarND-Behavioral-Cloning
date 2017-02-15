@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 [image3]: ./media/random_shadow_example.png "Random Shadow"
 [image4]: ./media/recovery_example.jpg "Recovery Driving Image"
 [image5]: ./media/track_center_driving.jpg "Center Driving Image"
-[image6]: ./media/steering_offset_example_edited.png "Steering Offset"
+[image6]: ./media/steering_offset_example_edited.jpg "Steering Offset"
 
 
 ## Rubric Points
